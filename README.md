@@ -6,7 +6,7 @@ Documentação pública da Lado Bom Seguros em Docusaurus.
 
 - Docusaurus 3 com TypeScript
 - Conteúdo em Markdown/MDX na pasta `docs/`
-- Rotas públicas na raiz do domínio, como `/conceitos-gerais`
+- Rotas públicas no GitHub Pages, como `/docs/conceitos-gerais`
 - Busca local com `@easyops-cn/docusaurus-search-local`
 - Build estático compatível com Vercel, GitHub Pages e Cloudflare Pages
 
@@ -41,23 +41,34 @@ Configuração recomendada:
 - Install command: `npm install`
 - Node.js: `20` ou superior
 
-Para preview em domínio da Vercel, o site funciona com `baseUrl: '/'`. Antes de publicar em produção, ajuste `url` em `docusaurus.config.ts` para o domínio final.
+Para preview em domínio da Vercel, crie uma branch temporária com `baseUrl: '/'` ou configure um domínio equivalente. A configuração principal deste repositório está preparada para GitHub Pages em `/docs/`.
 
 ## Deploy no GitHub Pages
 
-Se for usar domínio próprio, mantenha:
+O repositório esperado é:
 
-```ts
-url: 'https://docs.ladobom.com',
-baseUrl: '/',
+```text
+ladobom/docs
 ```
 
-Se for usar URL padrão do GitHub Pages, ajuste:
+A URL pública esperada é:
+
+```text
+https://ladobom.github.io/docs/
+```
+
+Configuração correspondente em `docusaurus.config.ts`:
 
 ```ts
-url: 'https://ORG.github.io',
-baseUrl: '/NOME_DO_REPOSITORIO/',
+url: 'https://ladobom.github.io',
+baseUrl: '/docs/',
+organizationName: 'ladobom',
+projectName: 'docs',
 ```
+
+O deploy é feito pelo workflow `.github/workflows/deploy.yml`.
+
+No GitHub, configure `Settings -> Pages -> Build and deployment -> Source` como `GitHub Actions`.
 
 ## Redirects
 

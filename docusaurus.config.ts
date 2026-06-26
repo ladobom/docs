@@ -11,10 +11,10 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://docs.ladobom.com',
-  baseUrl: '/',
+  url: 'https://ladobom.github.io',
+  baseUrl: '/docs/',
   organizationName: 'ladobom',
-  projectName: 'ladobom-docs-docusaurus',
+  projectName: 'docs',
 
   onBrokenLinks: 'throw',
   trailingSlash: false,
