@@ -63,16 +63,55 @@
   max-width: 100%;
 }
 
+.theme-doc-sidebar-icon {
+  color: #6b7280;
+  flex: 0 0 auto;
+  height: 0.95rem;
+  margin-right: 0.45rem;
+  width: 0.95rem;
+}
+
+.menu__link--active .theme-doc-sidebar-icon,
+.menu__list-item-collapsible--active .theme-doc-sidebar-icon {
+  color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-icon {
+  color: #a7a3b8;
+}
+
+[data-theme='dark'] .menu__link--active .theme-doc-sidebar-icon,
+[data-theme='dark']
+  .menu__list-item-collapsible--active
+  .theme-doc-sidebar-icon {
+  color: var(--ifm-color-primary);
+}
+
 .mintlify-callout {
+  align-items: flex-start;
   border: 1px solid var(--mintlify-border);
   border-left-width: 4px;
   border-radius: 6px;
+  display: flex;
+  gap: 0.75rem;
   margin: 1rem 0;
   padding: 0.9rem 1rem;
   background: var(--mintlify-muted-bg);
 }
 
-.mintlify-callout > div > :last-child,
+.mintlify-callout__content {
+  min-width: 0;
+}
+
+.mintlify-callout__icon {
+  color: var(--ifm-color-primary);
+  flex: 0 0 auto;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  width: 1.15rem;
+}
+
+.mintlify-callout__content > div > :last-child,
 .mintlify-card__body > :last-child,
 .mintlify-accordion__body > :last-child,
 .mintlify-step > div > :last-child {
@@ -129,11 +168,10 @@
 }
 
 .mintlify-card__icon {
-  background: #502896;
-  border-radius: 999px;
-  display: inline-block;
-  height: 0.65rem;
-  width: 0.65rem;
+  color: var(--ifm-color-primary);
+  flex: 0 0 auto;
+  height: 1.15rem;
+  width: 1.15rem;
 }
 
 .mintlify-card__cta {

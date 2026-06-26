@@ -1,5 +1,77 @@
 import React, {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
+import {
+  ArrowDown,
+  ArrowRightLeft,
+  ArrowUp,
+  Banknote,
+  Bell,
+  BookOpen,
+  Building,
+  Building2,
+  Calendar,
+  CalendarDays,
+  ChartBar,
+  Check,
+  Circle,
+  CircleCheck,
+  CircleDollarSign,
+  CircleHelp,
+  CirclePlus,
+  CircleX,
+  ClipboardCheck,
+  Clock,
+  Coins,
+  CreditCard,
+  DollarSign,
+  Eye,
+  File,
+  FileCheck,
+  FilePenLine,
+  FilePlus,
+  FileText,
+  Flag,
+  Flame,
+  Gift,
+  Globe,
+  Handshake,
+  Headphones,
+  Heart,
+  Home,
+  House,
+  Info as InfoIcon,
+  Infinity,
+  Link as LinkIcon,
+  List,
+  Lock,
+  Mail,
+  MapPin,
+  Monitor,
+  Pencil,
+  Percent,
+  Phone,
+  Plane,
+  Play,
+  ReceiptText,
+  RefreshCw,
+  Repeat,
+  Scale,
+  Search,
+  Settings,
+  ShieldCheck,
+  Star,
+  Target,
+  TrendingUp,
+  TriangleAlert,
+  Truck,
+  Umbrella,
+  User,
+  UserCheck,
+  Users,
+  Wrench,
+  X,
+} from 'lucide-react';
+import type {LucideIcon} from 'lucide-react';
 
 type ChildrenProps = {
   children?: ReactNode;
@@ -8,6 +80,7 @@ type ChildrenProps = {
 type CalloutProps = ChildrenProps & {
   title?: string;
   icon?: string;
+  iconType?: string;
 };
 
 type CardProps = ChildrenProps & {
@@ -35,54 +108,178 @@ const calloutClassByType = {
   warning: 'mintlify-callout--warning',
 };
 
+const iconByName: Record<string, LucideIcon> = {
+  airplane: Plane,
+  'arrow-down': ArrowDown,
+  'arrow-path': RefreshCw,
+  'arrow-trending-up': TrendingUp,
+  'arrow-up': ArrowUp,
+  'arrows-right-left': ArrowRightLeft,
+  banknotes: Banknote,
+  bell: Bell,
+  'book-open': BookOpen,
+  building: Building,
+  'building-office': Building2,
+  'building-office-2': Building2,
+  calendar: Calendar,
+  'calendar-days': CalendarDays,
+  'chart-bar': ChartBar,
+  'chart-line': TrendingUp,
+  check: Check,
+  'check-circle': CircleCheck,
+  circle: Circle,
+  'circle-check': CircleCheck,
+  'circle-dollar': CircleDollarSign,
+  clock: Clock,
+  'clipboard-document-check': ClipboardCheck,
+  'cog-6-tooth': Settings,
+  'computer-desktop': Monitor,
+  'credit-card': CreditCard,
+  coins: Coins,
+  'currency-dollar': CircleDollarSign,
+  'document': File,
+  'document-check': FileCheck,
+  'document-plus': FilePlus,
+  'document-text': FileText,
+  'dollar-sign': DollarSign,
+  envelope: Mail,
+  'exclamation-triangle': TriangleAlert,
+  eye: Eye,
+  'file-pdf': FileText,
+  'file-signature': FilePenLine,
+  'file-word': FileText,
+  'file-contract': FileText,
+  fire: Flame,
+  flag: Flag,
+  gear: Settings,
+  gift: Gift,
+  globe: Globe,
+  handshake: Handshake,
+  headphones: Headphones,
+  heart: Heart,
+  home: Home,
+  house: House,
+  infinity: Infinity,
+  information: InfoIcon,
+  'information-circle': InfoIcon,
+  instagram: Globe,
+  link: LinkIcon,
+  linkedin: LinkIcon,
+  'list-bullet': List,
+  lock: Lock,
+  'lock-closed': Lock,
+  'magnifying-glass': Search,
+  'map-pin': MapPin,
+  pencil: Pencil,
+  percent: Percent,
+  phone: Phone,
+  play: Play,
+  plus: CirclePlus,
+  'plus-circle': CirclePlus,
+  question: CircleHelp,
+  'question-mark': CircleHelp,
+  repeat: Repeat,
+  'receipt-percent': ReceiptText,
+  scale: Scale,
+  'shield-check': ShieldCheck,
+  star: Star,
+  sync: RefreshCw,
+  target: Target,
+  'triangle-exclamation': TriangleAlert,
+  truck: Truck,
+  umbrella: Umbrella,
+  user: User,
+  'user-check': UserCheck,
+  'user-group': Users,
+  'user-headset': Headphones,
+  wrench: Wrench,
+  'wrench-screwdriver': Wrench,
+  'x-circle': CircleX,
+  'x-mark': X,
+};
+
+export function MintlifyIcon({
+  name,
+  className,
+}: {
+  name?: string;
+  className: string;
+}) {
+  if (!name) {
+    return null;
+  }
+
+  const Icon = iconByName[name] ?? Circle;
+
+  return <Icon aria-hidden="true" className={className} strokeWidth={2} />;
+}
+
 function CalloutBox({
   children,
   title,
   type,
-}: ChildrenProps & {title?: string; type: keyof typeof calloutClassByType}) {
+  icon,
+}: ChildrenProps & {
+  title?: string;
+  type: keyof typeof calloutClassByType;
+  icon?: string;
+}) {
+  const fallbackIconByType: Record<keyof typeof calloutClassByType, string> = {
+    info: 'information-circle',
+    note: 'information-circle',
+    tip: 'circle-check',
+    warning: 'exclamation-triangle',
+  };
+
   return (
     <div className={`mintlify-callout ${calloutClassByType[type]}`}>
-      {title ? <strong>{title}</strong> : null}
-      <div>{children}</div>
+      <MintlifyIcon
+        className="mintlify-callout__icon"
+        name={icon ?? fallbackIconByType[type]}
+      />
+      <div className="mintlify-callout__content">
+        {title ? <strong>{title}</strong> : null}
+        <div>{children}</div>
+      </div>
     </div>
   );
 }
 
-export function Info({children, title}: CalloutProps) {
+export function Info({children, title, icon}: CalloutProps) {
   return (
-    <CalloutBox title={title} type="info">
+    <CalloutBox icon={icon} title={title} type="info">
       {children}
     </CalloutBox>
   );
 }
 
-export function Note({children, title}: CalloutProps) {
+export function Note({children, title, icon}: CalloutProps) {
   return (
-    <CalloutBox title={title} type="note">
+    <CalloutBox icon={icon} title={title} type="note">
       {children}
     </CalloutBox>
   );
 }
 
-export function Tip({children, title}: CalloutProps) {
+export function Tip({children, title, icon}: CalloutProps) {
   return (
-    <CalloutBox title={title} type="tip">
+    <CalloutBox icon={icon} title={title} type="tip">
       {children}
     </CalloutBox>
   );
 }
 
-export function Warning({children, title}: CalloutProps) {
+export function Warning({children, title, icon}: CalloutProps) {
   return (
-    <CalloutBox title={title} type="warning">
+    <CalloutBox icon={icon} title={title} type="warning">
       {children}
     </CalloutBox>
   );
 }
 
-export function Callout({children, title}: CalloutProps) {
+export function Callout({children, title, icon}: CalloutProps) {
   return (
-    <CalloutBox title={title} type="note">
+    <CalloutBox icon={icon} title={title} type="tip">
       {children}
     </CalloutBox>
   );
@@ -103,7 +300,7 @@ export function Card({children, title, href, icon}: CardProps) {
   return (
     <div className="mintlify-card">
       <div className="mintlify-card__header">
-        {icon ? <span className="mintlify-card__icon" aria-hidden="true" /> : null}
+        <MintlifyIcon className="mintlify-card__icon" name={icon} />
         {title ? <strong>{title}</strong> : null}
       </div>
       <div className="mintlify-card__body">{children}</div>

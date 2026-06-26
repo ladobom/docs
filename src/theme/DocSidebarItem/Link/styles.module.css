@@ -1,0 +1,11 @@
+.menuExternalLink {
+  align-items: center;
+}
+
+.linkLabel {
+  display: -webkit-box;
+  line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
