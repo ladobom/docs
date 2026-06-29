@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://ladobom.github.io',
-  baseUrl: '/docs/',
+  url: 'https://docs.ladobom.com',
+  baseUrl: '/',
   organizationName: 'ladobom',
   projectName: 'docs',
 
