@@ -24,6 +24,10 @@
   <Card title="Prestamista" icon="shield-check" href="/produtos/prestamista-capital-vinculado/sobre">
     Proteção para o credor em financiamentos: morte, invalidez, doenças graves e desemprego (HDI Seguros).
   </Card>
+
+  <Card title="Setup Digital" icon="credit-card" href="/setup-digital/visao-geral">
+    Cobranças avulsas e Taxa Setup com PIX, boleto, split automático e repasse em até 24 horas.
+  </Card>
 </CardGroup>
 
 ## Sobre a Lado Bom Seguros
@@ -58,6 +62,7 @@
 * **Seguro Incêndio**: Obrigatório por lei, protege contra incêndio e explosão
 * **Título de Capitalização**: Alternativa às garantias tradicionais com resgate do valor investido
 * **Prestamista**: Proteção para credores em financiamentos (morte, invalidez, doenças, desemprego)
+* **Setup Digital**: Solução para cobranças avulsas e operacionalização da Taxa Setup
 
 ### Nossas Vantagens
 

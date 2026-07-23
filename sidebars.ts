@@ -87,6 +87,22 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Setup Digital',
+      collapsible: false,
+      customProps: {icon: 'credit-card'},
+      link: {type: 'doc', id: 'setup-digital/visao-geral'},
+      items: [
+        doc('setup-digital/primeiros-passos', 'play'),
+        doc('setup-digital/como-enviar-cobranca', 'credit-card'),
+        doc('setup-digital/guia-visual-cobrancas-avulsas', 'file-pdf'),
+        doc('setup-digital/colaboradores-distribuicao', 'user-group'),
+        doc('setup-digital/guia-visual-comissionamento', 'file-pdf'),
+        doc('setup-digital/fluxo-financeiro-repasses', 'banknotes'),
+        doc('setup-digital/faq', 'question'),
+      ],
+    },
+    {
+      type: 'category',
       label: 'Regulamentos e Promoções',
       collapsible: false,
       customProps: {icon: 'gift'},
