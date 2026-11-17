@@ -103,6 +103,24 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Lançamentos',
+      collapsible: false,
+      customProps: {icon: 'bell'},
+      items: [
+        doc(
+          'lancamentos/aceite-condicoes-gerais-seguro-incendio',
+          'file-pdf',
+        ),
+        doc(
+          'lancamentos/resumo-contratacao-seguro-fianca',
+          'file-pdf',
+        ),
+        doc('lancamentos/download-cotacao-seguradora', 'file-pdf'),
+        doc('lancamentos/material-apoio-seguradoras', 'file-pdf'),
+      ],
+    },
+    {
+      type: 'category',
       label: 'Regulamentos e Promoções',
       collapsible: false,
       customProps: {icon: 'gift'},

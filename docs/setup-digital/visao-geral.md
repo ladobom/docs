@@ -44,6 +44,12 @@ O Setup Digital foi criado para reduzir atividades manuais, centralizar o contro
   </Step>
 </Steps>
 
+## Uso da Taxa Setup na contratação
+
+Quando o módulo de cobranças está configurado, a opção de realizar uma cobrança de Taxa de Setup pode ser exibida no resumo da contratação do Seguro Fiança. A imobiliária revisa os dados da contratação e confirma se deseja utilizar essa opção antes de avançar.
+
+Veja o [guia visual do resumo da contratação do Seguro Fiança](/lancamentos/resumo-contratacao-seguro-fianca) para conhecer essa etapa.
+
 ## Principais benefícios
 
 <CardGroup cols={2}>

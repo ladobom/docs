@@ -107,6 +107,28 @@
   * **Agilidade**: Transmissão imediata da proposta
 </Callout>
 
+### Atualizações do fluxo de contratação
+
+Antes de avançar para a proposta, a plataforma apresenta um resumo da opção escolhida, com plano, assistência, prêmios e parcelamento. Nessa mesma etapa, a imobiliária pode optar pela cobrança da Taxa de Setup quando o módulo de cobranças estiver configurado.
+
+Consulte o [guia visual do resumo da contratação](/lancamentos/resumo-contratacao-seguro-fianca) para ver os detalhes dessa tela.
+
+Após a aprovação, o menu de ações da cotação também permite baixar a carta de aprovação e os demais arquivos gerados pela seguradora. Veja o [guia de download da cotação](/lancamentos/download-cotacao-seguradora).
+
+<CardGroup cols={2}>
+  <Card title="Resumo da contratação" icon="document-check" href="/lancamentos/resumo-contratacao-seguro-fianca">
+    Revise a opção escolhida antes da proposta.
+  </Card>
+
+  <Card title="Download da cotação" icon="file-pdf" href="/lancamentos/download-cotacao-seguradora">
+    Baixe a carta de aprovação e os documentos gerados.
+  </Card>
+
+  <Card title="Material de apoio" icon="file-pdf" href="/lancamentos/material-apoio-seguradoras">
+    Acesse cláusulas e documentos das seguradoras.
+  </Card>
+</CardGroup>
+
 ## 4. Vinculação ao Contrato de Locação
 
 <Warning>

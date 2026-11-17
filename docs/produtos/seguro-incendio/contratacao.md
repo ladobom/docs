@@ -102,6 +102,12 @@
   </Card>
 </CardGroup>
 
+### Aceite das condições gerais
+
+Antes de finalizar a contratação, a plataforma exibe uma tela para confirmar o aceite das condições gerais da seguradora selecionada. Nessa etapa, é possível abrir a documentação da seguradora e optar pelo envio automático do certificado e das condições gerais ao e-mail do inquilino.
+
+Consulte o [guia visual do aceite das condições gerais](/lancamentos/aceite-condicoes-gerais-seguro-incendio) para ver a tela e o passo a passo completo.
+
 ### 4. Análise e Aprovação
 
 <Steps>
